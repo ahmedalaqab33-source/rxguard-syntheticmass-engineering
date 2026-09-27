@@ -1,0 +1,46 @@
+name: Bootstrap full release
+on:
+  push:
+    paths:
+      - '.bootstrap/READY'
+permissions:
+  contents: write
+jobs:
+  import-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct curated release
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .bootstrap/part-* > /tmp/rxguard-release.b64
+          base64 -d /tmp/rxguard-release.b64 > /tmp/rxguard-release.zip
+          rm -rf /tmp/rxguard-release
+          mkdir -p /tmp/rxguard-release
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          z=Path('/tmp/rxguard-release.zip')
+          out=Path('/tmp/rxguard-release')
+          with zipfile.ZipFile(z) as f:
+              f.extractall(out)
+          PY
+          rsync -a --delete --exclude='.git/' /tmp/rxguard-release/ ./
+          rm -rf .bootstrap
+          rm -f .github/workflows/bootstrap.yml
+      - name: Commit curated v1.0.0 package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "release: import complete RxGuard SyntheticMass engineering audit v1.0.0"
+          git push
