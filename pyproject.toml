@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rxguard-syntheticmass-engineering"
+version = "1.0.0"
+description = "Reproducible SyntheticMass engineering audit and renal feasibility gate"
+requires-python = ">=3.11"
+dependencies = ["duckdb==1.5.5"]
+license = "MIT"
+authors = [{name = "Ahmed Alaqab"}]
+
+[project.scripts]
+rxguard-audit = "rxguard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
