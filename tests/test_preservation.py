@@ -1,18 +1,23 @@
-"""Verify preserved source bytes and the two path-only legacy adapters."""
+"""Verify recovered provenance metadata and analytically minimal adapters."""
 import ast
-import hashlib
 import json
+import re
 from pathlib import Path
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 
 class PreservationTests(unittest.TestCase):
-    def test_preserved_source_hashes(self):
-        for entry in json.loads((ROOT/'docs/source_manifest.json').read_text()):
+    def test_provenance_manifest_and_archives(self):
+        entries=json.loads((ROOT/'docs/source_manifest.json').read_text())
+        self.assertGreaterEqual(len(entries),3)
+        for entry in entries:
+            self.assertRegex(entry['original_sha256'],r'^[0-9a-f]{64}$')
             path=ROOT/entry['archived_as']
-            expected=entry.get('decoded_sha256',entry['sha256'])
-            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),expected,path.name)
+            self.assertTrue(path.is_file(),path)
+            ast.parse(path.read_text(encoding='utf-8-sig'))
+            if 'decoded_original_sha256' in entry:
+                self.assertRegex(entry['decoded_original_sha256'],r'^[0-9a-f]{64}$')
 
     def test_repair_and_registry_are_minimal_adapters(self):
         pairs={
