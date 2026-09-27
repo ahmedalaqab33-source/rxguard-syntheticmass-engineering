@@ -1,5 +1,9 @@
 # RxGuard · SyntheticMass Engineering Audit
 
+[![Engineering checks](https://github.com/ahmedalaqab33-source/rxguard-syntheticmass-engineering/actions/workflows/tests.yml/badge.svg)](https://github.com/ahmedalaqab33-source/rxguard-syntheticmass-engineering/actions/workflows/tests.yml)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 **Large-scale data engineering with an explicit clinical feasibility stop.**
 
 RxGuard explores reproducible medication-safety research infrastructure. This repository preserves its completed SyntheticMass engineering phase: CSV ingestion, Parquet/DuckDB analytics, patient identifier reconciliation, and a renal-data feasibility kill-test. It packages existing work and evidence; it is not a new analysis presented as an earlier result.
