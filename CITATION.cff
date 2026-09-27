@@ -1,19 +1,25 @@
 cff-version: 1.2.0
-message: "Please cite this software, its engineering-audit release tag, and the commit used."
+message: "Please cite this software, the release version, and the commit used."
 type: software
 title: "RxGuard: SyntheticMass Engineering Audit"
 authors:
   - family-names: "Alaqab"
     given-names: "Ahmed"
 version: "1.0.0"
+date-released: "2026-09-27"
 license: MIT
+repository-code: "https://github.com/ahmedalaqab33-source/rxguard-syntheticmass-engineering"
+url: "https://github.com/ahmedalaqab33-source/rxguard-syntheticmass-engineering"
 abstract: >-
-  Preserved and reproducible SyntheticMass data engineering, canonical patient
-  identifier reconciliation, and renal feasibility kill-testing. SyntheticMass
-  is an engineering-only environment; clinical validation is not established.
+  Reproducible SyntheticMass data engineering, canonical patient-identifier
+  reconciliation, and renal feasibility kill-testing. SyntheticMass is retained
+  as an engineering-validation environment; this release does not establish
+  clinical validity.
 keywords:
+  - clinical data science
   - data engineering
   - DuckDB
   - Parquet
   - reproducible research
   - data quality
+  - synthetic health data
