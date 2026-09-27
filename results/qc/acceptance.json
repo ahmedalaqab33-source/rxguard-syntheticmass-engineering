@@ -1,13 +1,20 @@
 {
   "release": "v1.0.0",
-  "status": "PENDING_FINAL_REMOTE_CI",
+  "status": "PASS_FINAL_REMOTE_CI",
   "checks": {
     "documentation": "PASS",
     "license": "PASS",
     "citation_metadata": "PASS",
     "data_exclusion_policy": "PASS",
-    "fixture_tests": "PENDING_FINAL_REMOTE_CI",
-    "publication_audit": "PENDING_FINAL_REMOTE_CI"
+    "fixture_tests": "PASS",
+    "preservation_tests": "PASS",
+    "publication_audit": "PASS",
+    "github_actions": "PASS"
   },
-  "note": "This file is updated only after final GitHub Actions verification."
+  "verified_workflow": {
+    "workflow": "Engineering checks",
+    "successful_run_id": 36338357723,
+    "commit": "ac104448179564e871620980645b744e226cccee"
+  },
+  "note": "Clinical validity is explicitly out of scope; this acceptance concerns the published engineering/reproducibility release."
 }
