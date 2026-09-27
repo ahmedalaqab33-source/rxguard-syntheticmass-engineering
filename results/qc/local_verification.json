@@ -1,0 +1,18 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_EXCEPTIONS",
+  "evidence_basis": "prior local full-scale verification preserved in the engineering audit; not rerun by GitHub Actions because source data are intentionally excluded",
+  "active_parquet_bytes": 1801835388,
+  "verified_row_counts": {
+    "patients_repaired": 1594711,
+    "encounters": 15109427,
+    "medications": 4781956,
+    "observations": 64654706,
+    "creatinine_observations": 1913439
+  },
+  "documented_exceptions": [
+    "339-row difference between original and repaired patient tables",
+    "43 conflicting demographic identities",
+    "1854 registry identifiers without a patient row",
+    "remaining malformed demographic fields"
+  ]
+}
