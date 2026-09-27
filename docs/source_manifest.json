@@ -1,0 +1,58 @@
+[
+  {
+    "source": "RxGuard_Analytics/VAKI_3B_build_bigdata.py",
+    "sha256": "13735bad0f4696b8b1873cfdc4e63e05ea3ceb4c7ed82b3773517055b8b8f1a8",
+    "archived_as": "legacy/VAKI_3B_build_bigdata.py"
+  },
+  {
+    "source": "Run_RxGuard_VAKI_3C_REPAIR.py",
+    "sha256": "a9a6180b51beb0dec3c9336b37e3c3706d2c7b89ecf95d9d6a77324d475baba2",
+    "archived_as": "legacy/Run_RxGuard_VAKI_3C_REPAIR.py"
+  },
+  {
+    "source": "Run_RxGuard_VAKI_3C2_Reconcile.py",
+    "sha256": "dae2665624b24a81dd10b67f2bfed4059f7d2fc0992c832a0863fd881d24747b",
+    "archived_as": "legacy/Run_RxGuard_VAKI_3C2_Reconcile.py"
+  },
+  {
+    "source": "Run_RxGuard_VAKI_3C1_QA.py",
+    "sha256": "412e9e3228deeb9cc676751009e2a249502a5a1f61d5ea2ddf49fd986b947710",
+    "archived_as": "legacy/Run_RxGuard_VAKI_3C1_QA.py"
+  },
+  {
+    "source": "RxGuard_Analytics/VAKI_3C_renal_cohort.py",
+    "sha256": "f9d59dce443f440db25a37f9d5f00daa5d5da2f419fb227132a585f4692a1787",
+    "archived_as": "legacy/VAKI_3C_renal_cohort.py"
+  },
+  {
+    "source": "RxGuard_VAKI_3D1_KILL_TEST_ONE_FILE.bat",
+    "sha256": "e02bb21ff5f6b9a9973aeb9dbf01d3e9a8e6b49ba290823e98d303fcea7ac92a",
+    "archived_as": "legacy/VAKI_3D1_decoded.py",
+    "decoded_sha256": "32750086d200b1bc1ad26282ec229bf4dd49e2d1296e06a4d0c20250e3d7daf6",
+    "transformation": "Concatenate Base64 echo payloads, decode to UTF-8; batch wrapper omitted."
+  },
+  {
+    "source": "RxGuard_Analytics/reports/VAKI_3C2_Canonical_Patient_Registry_Linkage_Reconciliation.json",
+    "sha256": "2ea343c7f77ea18d06a2a22aaa52dfdab2b7dfcc63e2c6b43fbbf051288879d6",
+    "published_as": "results/summaries/registry.json",
+    "transformation": "Removed artifacts path dictionary if present; numerical results unchanged."
+  },
+  {
+    "source": "RxGuard_Analytics/VAKI_3D1/VAKI_3D1_Creatinine_Distribution_Integrity_KillTest.json",
+    "sha256": "c0707a8e7d7c253c0a64579bb94bad7b454f381468c36d8839b7ca6dd41d69bd",
+    "published_as": "results/summaries/kill_test.json",
+    "transformation": "Removed artifacts path dictionary if present; numerical results unchanged."
+  },
+  {
+    "source": "RxGuard_Analytics/reports/VAKI_3B_Parquet_Manifest.json",
+    "sha256": "aeebbc637efab2959ea06709dc0e1921d47fc5e5134879d8ea193aebab9c4662",
+    "published_as": "results/summaries/ingestion_manifest.json",
+    "transformation": "Allowlist aggregate counts, benchmark, batch labels, sizes, source hashes; omit absolute paths and original malformed column labels."
+  },
+  {
+    "source": "RxGuard_Analytics/reports/VAKI_3C1_Patient_Schema_Duplicate_Linkage_Audit.json",
+    "sha256": "8a8a47480b9df13223a39b7c3517dde5afb52abb28e90a0cc8e701aae0b35ff8",
+    "published_as": "results/summaries/patient_qa.json",
+    "transformation": "Explicit aggregate-field allowlist; exclude gender distribution containing source record fragments."
+  }
+]
