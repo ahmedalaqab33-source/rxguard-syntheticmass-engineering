@@ -1,0 +1,12 @@
+{
+  "evidence_type": "reviewed aggregate registry evidence",
+  "summary": {
+    "registry_total_ids": 1595720,
+    "demographics_eligible": 1593823,
+    "demographics_hold": 43,
+    "no_demographic_row": 1854,
+    "event_analytics_gate": "PASS_WITH_CANONICAL_REGISTRY",
+    "demographic_analytics_gate": "RESTRICT_TO_DEMOGRAPHICS_ELIGIBLE"
+  },
+  "interpretation": "Identifier registry for engineering linkage. Counts are not clinically adjudicated patient counts and do not certify demographic accuracy."
+}
