@@ -1,0 +1,13 @@
+{
+  "status": "MATCH_ON_SUBSTANTIVE_AGGREGATE_FIELDS",
+  "scope": "Full-scale Parquet reuse route from the prior local audit",
+  "matched": [
+    "canonical registry aggregate results excluding runtime and paths",
+    "creatinine kill-test substantive report fields excluding runtime and paths"
+  ],
+  "not_claimed": [
+    "full raw CSV rebuild at full scale",
+    "clinical validation",
+    "byte-for-byte equivalence of every transformed table"
+  ]
+}
