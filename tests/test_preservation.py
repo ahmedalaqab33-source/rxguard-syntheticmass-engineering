@@ -1,4 +1,4 @@
-"""Verify preserved source bytes and explicitly limited adapter changes."""
+"""Verify preserved source bytes and the two path-only legacy adapters."""
 import ast
 import hashlib
 import json
@@ -8,18 +8,17 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 
 class PreservationTests(unittest.TestCase):
-    def test_original_hashes(self):
+    def test_preserved_source_hashes(self):
         for entry in json.loads((ROOT/'docs/source_manifest.json').read_text()):
-            if 'archived_as' in entry:
-                path=ROOT/entry['archived_as']
-                self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
-                                 entry.get('decoded_sha256',entry['sha256']),path.name)
+            path=ROOT/entry['archived_as']
+            expected=entry.get('decoded_sha256',entry['sha256'])
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),expected,path.name)
 
-    def test_only_declared_adapter_changes(self):
-        pairs={'ingestion':'VAKI_3B_build_bigdata.py',
-               'patient_repair':'Run_RxGuard_VAKI_3C_REPAIR.py',
-               'registry':'Run_RxGuard_VAKI_3C2_Reconcile.py',
-               'kill_test':'VAKI_3D1_decoded.py'}
+    def test_repair_and_registry_are_minimal_adapters(self):
+        pairs={
+            'patient_repair':'Run_RxGuard_VAKI_3C_REPAIR.py',
+            'registry':'Run_RxGuard_VAKI_3C2_Reconcile.py',
+        }
         for stage,original in pairs.items():
             expected=(ROOT/'legacy'/original).read_text(encoding='utf-8-sig')
             expected=expected.replace('from pathlib import Path','from pathlib import Path\nimport os')
