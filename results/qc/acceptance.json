@@ -1,0 +1,13 @@
+{
+  "release": "v1.0.0",
+  "status": "PENDING_FINAL_REMOTE_CI",
+  "checks": {
+    "documentation": "PASS",
+    "license": "PASS",
+    "citation_metadata": "PASS",
+    "data_exclusion_policy": "PASS",
+    "fixture_tests": "PENDING_FINAL_REMOTE_CI",
+    "publication_audit": "PENDING_FINAL_REMOTE_CI"
+  },
+  "note": "This file is updated only after final GitHub Actions verification."
+}
