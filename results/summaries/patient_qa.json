@@ -1,0 +1,10 @@
+{
+  "evidence_type": "reviewed historical aggregate patient-QA evidence",
+  "qa_gate": "FAIL",
+  "patient_rows_original_ingestion": 1595050,
+  "patient_rows_repaired": 1594711,
+  "row_difference": 339,
+  "missing_patient_id_rows": 461,
+  "generic_or_malformed_demographic_fields_present": true,
+  "interpretation": "Historical QA failure is retained. Canonical-registry reconciliation does not erase source parser or demographic limitations."
+}
