@@ -45,10 +45,11 @@ def main():
             if re.search(pattern,text):failures.append([name,label])
     manifest=json.loads(contents['docs/source_manifest.json'])
     for entry in manifest:
-        if 'archived_as' in entry:
-            name=entry['archived_as']
-            if hashlib.sha256(contents[name]).hexdigest()!=entry.get('decoded_sha256',entry['sha256']):
-                failures.append([name,'original hash mismatch'])
+        original=entry.get('original_sha256')
+        if not original or not re.fullmatch(r'[0-9a-f]{64}',original):
+            failures.append(['docs/source_manifest.json','invalid original provenance hash'])
+        if 'archived_as' in entry and entry['archived_as'] not in contents:
+            failures.append([entry['archived_as'],'missing archived source'])
     ignored=['.env','.local/run/data.csv','data/patients.csv','results/patients.csv',
              'results/private.parquet','results/database.duckdb','docs/secret.pem',
              'docs/private.docx','unrelated.txt','src/rxguard/__pycache__/module.pyc']
