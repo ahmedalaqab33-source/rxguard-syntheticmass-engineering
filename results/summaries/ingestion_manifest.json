@@ -1,0 +1,15 @@
+{
+  "evidence_type": "reviewed historical aggregate",
+  "csv_batches": 12,
+  "csv_files": 108,
+  "row_counts": {
+    "patients_original_ingestion": 1595050,
+    "encounters": 15109427,
+    "medications": 4781956,
+    "observations": 64654706
+  },
+  "source_bytes": 15915116630,
+  "original_parquet_bytes": 1827048827,
+  "historical_binary_size_ratio": 8.71,
+  "note": "Historical ingestion evidence. Patient rows later changed after explicit repair; see patient_qa.json and limitations."
+}
