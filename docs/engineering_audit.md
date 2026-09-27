@@ -28,7 +28,7 @@ The publication directory is a curated derivative of existing code and evidence.
 | Code/reproducibility | Preserved stages, CLI, observed dependencies | PASS | Add configuration and non-overwrite controls |
 | Tests | Fixture execution and source-preservation tests | PASS | See acceptance evidence |
 | Documentation/governance | README, scope, provenance, limitations, release notes | PASS | Publish only reviewed code and aggregate evidence |
-| GitHub publication | Repository creation unavailable until browser sign-in | BLOCKED | Local release prepared; no public URL claimed |
+| GitHub publication | Public repository, complete curated tree, final Engineering checks passed | PASS | Release acceptance recorded in `results/qc/acceptance.json` |
 
 ## Verified findings and discrepancies
 
@@ -42,4 +42,4 @@ Read-only queries confirmed 1,913,439 numeric creatinine rows, a single value of
 
 Scientific integrity: preserved negative result and explicit clinical boundary. Code quality: minimal, reviewable adapters and preserved originals. Reproducibility: tested fixtures and full-scale selective reproduction, with acquisition gaps disclosed. Documentation: evidence-linked README, architecture, limitations, citation, and portfolio wording. Privacy/security: aggregate allowlists, excluded record fragments, exact staged-byte checks, no data files admitted. Organization/Git hygiene: a separate curated Git root, no artificial historical commits. Large-file safety: 1 MiB per-file publication gate and data extension exclusions. Licensing/citation: MIT software license and CFF metadata without a fabricated DOI. Portfolio readability: evidence-based claims with limitations alongside achievements.
 
-Exact local acceptance results and publication status are recorded in `results/qc/acceptance.json`; do not infer remote success from prepared release notes.
+Exact local and remote acceptance status is recorded in `results/qc/acceptance.json`. The final GitHub Actions workflow verifies installation, fixture/preservation tests, and the publication-safety audit.
