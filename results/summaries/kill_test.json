@@ -1,0 +1,28 @@
+{
+  "evidence_type": "reviewed aggregate renal feasibility evidence",
+  "step": "VAKI-3D.1",
+  "decision": "ENGINEERING_ONLY_SYNTHETICMASS",
+  "scientific_scope": "Integrity/variability kill-test only. Does not diagnose AKI.",
+  "global_distribution": {
+    "rows_total": 1913439,
+    "rows_numeric": 1913439,
+    "unique_values": 1,
+    "min": 1.0,
+    "median": 1.0,
+    "max": 1.0,
+    "rows_equal_1": 1913439,
+    "pct_equal_1": 100.0
+  },
+  "patient_variability": {
+    "patients_total": 389788,
+    "patients_ge2": 361193,
+    "ge2_with_variation": 0,
+    "pct_ge2_with_variation": 0.0,
+    "median_sd_ge2": 0.0,
+    "first_last_changed": 0
+  },
+  "medication_description_search": {
+    "term": "vancomycin",
+    "case_insensitive_substring_matches": 0
+  }
+}
